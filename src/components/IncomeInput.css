@@ -1,0 +1,137 @@
+.income-input-container {
+  width: 100%;
+  margin-bottom: 1.5rem
+}
+
+.income-input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary, #1e293b);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.025em
+}
+
+.income-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 2px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  overflow: hidden
+}
+
+.income-input-wrapper:focus-within {
+  border-color: var(--primary-color, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1)
+}
+
+.income-input-currency {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-secondary, #64748b);
+  background: var(--bg-secondary, #f8fafc);
+  height: 100%;
+  min-height: 56px;
+  border-right: 2px solid var(--border-color, #e2e8f0)
+}
+
+.income-input {
+  flex: 1;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text-primary, #1e293b);
+  border: none;
+  outline: none;
+  background: transparent;
+  min-height: 56px
+}
+
+.income-input::placeholder {
+  color: var(--text-muted, #94a3b8);
+  font-weight: 400
+}
+
+.income-input-error {
+  border-color: var(--error-color, #ef4444)
+}
+
+.income-input-wrapper:has(.income-input-error):focus-within {
+  border-color: var(--error-color, #ef4444);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1)
+}
+
+.income-input-error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--error-color, #ef4444);
+  font-weight: 500
+}
+
+.income-input-error-message::before {
+  content: '⚠';
+  font-size: 1rem
+}
+
+/* Mobile responsiveness */
+@media (max-width: 640px) {
+  .income-input-currency {
+    padding: 0 0.75rem;
+    font-size: 1.125rem;
+    min-height: 52px
+  }
+
+  .income-input {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+    min-height: 52px
+  }
+
+  .income-input-label {
+    font-size: 0.8125rem
+  }
+}
+
+/* Accessibility - High contrast mode */
+@media (prefers-contrast: high) {
+  .income-input-wrapper {
+    border-width: 3px
+  }
+
+  .income-input-wrapper:focus-within {
+    border-width: 3px
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .income-input-wrapper {
+    background: var(--bg-dark, #1e293b);
+    border-color: var(--border-dark, #334155)
+  }
+
+  .income-input {
+    color: var(--text-dark, #f1f5f9)
+  }
+
+  .income-input-currency {
+    background: var(--bg-dark-secondary, #0f172a);
+    color: var(--text-dark-secondary, #94a3b8);
+    border-right-color: var(--border-dark, #334155)
+  }
+
+  .income-input::placeholder {
+    color: var(--text-dark-muted, #64748b)
+  }
+}
